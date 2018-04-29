@@ -49,12 +49,13 @@ void setup()
   Serial.println("Dual MC33926 Motor Shield");
   pinMode(ledPin, OUTPUT);
   pinMode(A_pin, INPUT_PULLUP);
+  pinMode(7,INPUT);
   attachInterrupt(digitalPinToInterrupt(A_pin), disp, RISING);
  // myPID.SetMode(AUTOMATIC);
 
   Setpoint = 5;
-  Kp = 10;
-  Kd = 1;
+  Kp = 90;
+  Kd = 10;
   Ki = 1;
 
   md.init();
@@ -65,6 +66,10 @@ void setup()
 
 void loop()
 {
+  while(!digitalRead(7)){
+  //stop motor if fuse is unplgged
+  md.setM1Speed(0);
+  }
   Error=Setpoint-w;
   sum_error+=Error;
   Output=Kp*Error+Ki*sum_error+(Error-prev_err)*Kd;//controller
