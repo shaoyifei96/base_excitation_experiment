@@ -16,7 +16,7 @@ const byte A_pin = 2;     // the number of the pushbutton pin
 const byte B_pin = 1;      // the number of the LED pin
 const byte Z_pin = 3;      // the number of the LED pin
 const byte ledPin = 13;
-byte input;
+int input;
 const int constant = 30;
 volatile double CurrentTime;
 volatile double ElapsedTime;
@@ -68,6 +68,8 @@ void loop()
 {
   if(Serial.available()){
     input = Serial.read();
+    input =input - 90;
+    Serial.print(input);
     if(input > 7 && input < 22){ 
       Setpoint = input;
     }
@@ -123,7 +125,7 @@ void disp() {
     StartTime = millis();
     counter = 0;
     w = constant * 6.28 / 1024 / ElapsedTime; //rad per sec
-    Serial.println(w);
+    //Serial.println(Setpoint);
     //Serial.println(Output);
     //Serial.println(sum_error);
   }
