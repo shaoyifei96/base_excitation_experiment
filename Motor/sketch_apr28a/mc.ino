@@ -97,18 +97,11 @@ void loop()
   //Output = 130;
   md.setM1Speed(round(Output));
   stopIfFault();
-  delay(10);
+  delay(30);
 
 }
-//void set_output(){
-//  t_n = millis();
-//  if(t_n-t_p != 0){
-//    t_delta = t_n - t_p;
-//  }
-//  t_p = t_n;
-//}
 
-
+//encoder implementation
 void disp() {
   ++counter;
   if(counter == constant){
