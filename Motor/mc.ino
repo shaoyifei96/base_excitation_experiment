@@ -53,8 +53,8 @@ void setup()
  // myPID.SetMode(AUTOMATIC);
 
   Setpoint = 5;
-  Kp = 10;
-  Kd = 1;
+  Kp = 100;
+  Kd = 10;
   Ki = 1;
 
   md.init();
@@ -92,7 +92,7 @@ void loop()
   //Output = 130;
   md.setM1Speed(round(Output));
   stopIfFault();
-  delay(10);
+  delay(30);
 
 }
 
