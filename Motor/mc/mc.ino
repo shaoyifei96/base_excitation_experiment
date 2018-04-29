@@ -53,8 +53,8 @@ void setup()
   attachInterrupt(digitalPinToInterrupt(A_pin), disp, RISING);
  // myPID.SetMode(AUTOMATIC);
 
-  Setpoint = 15;
-  Kp = 80;
+  Setpoint = 10;
+  Kp = 90;
   Kd = 10;
   Ki = 1;
   md.init();
@@ -96,7 +96,7 @@ void loop()
   //Output = 130;
   md.setM1Speed(round(Output));
   stopIfFault();
-  delay(10);
+  delay(30);
 
 }
 //void set_output(){
