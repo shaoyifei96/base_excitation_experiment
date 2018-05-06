@@ -1,0 +1,11 @@
+This document contains a list of all programs that must be installed before the VideoProcessor.py or Calibration.py scripts can run.
+
+Python3
+Python Libraries: (to install these use pip3 in command line with the correct package identifiers or download and install from online)
+	OpenCV
+	MatPlotLib
+	Numpy
+	Glob
+	Scipy
+	
+FFMPEG
