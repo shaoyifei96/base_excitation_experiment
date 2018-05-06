@@ -1,1 +1,1 @@
-This is the folder where the output of the VideoProcessor.py script go.
+This is the folder where the outputs of the VideoProcessor.py script go.
